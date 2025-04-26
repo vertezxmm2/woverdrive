@@ -1,0 +1,185 @@
+-- settings:
+local title = "Loading Script!" -- upper title
+local loading_text = "Please wait!" -- gray title
+local loadingtime = math.random(30, 50) -- RANDOM loading time (in seconds)
+
+-- credits to saint ! 
+-- do not touch/edit anything below! unless you know how to code ;)
+
+local TweenService = game:GetService("TweenService")
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local name = Instance.new("TextLabel")
+local loadingtext = Instance.new("TextLabel")
+local Dots = Instance.new("Frame")
+local Dot1 = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local InsideDot = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Dot2 = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local InsideDot_2 = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local Dot3 = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local InsideDot_3 = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local seperator = Instance.new("Frame")
+local timerLabel = Instance.new("TextLabel")
+
+-- GUI Structure
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.DisplayOrder = 999999999
+ScreenGui.IgnoreGuiInset = true
+
+Frame.Parent = ScreenGui
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Frame.BackgroundTransparency = 0.2
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.3748, 0, 0.3706, 0)
+Frame_2.Size = UDim2.new(0.2495, 0, 0.2574, 0)
+
+UICorner.Parent = Frame_2
+
+name.Name = "name"
+name.Parent = Frame_2
+name.BackgroundTransparency = 1
+name.Position = UDim2.new(0, 0, 0.05, 0)
+name.Size = UDim2.new(1, 0, 0.164, 0)
+name.Font = Enum.Font.FredokaOne
+name.Text = title
+name.TextColor3 = Color3.fromRGB(255, 255, 255)
+name.TextScaled = true
+
+loadingtext.Name = "loadingtext"
+loadingtext.Parent = Frame_2
+loadingtext.BackgroundTransparency = 1
+loadingtext.Position = UDim2.new(0.161, 0, 0.213, 0)
+loadingtext.Size = UDim2.new(0.677, 0, 0.12, 0)
+loadingtext.Font = Enum.Font.FredokaOne
+loadingtext.Text = loading_text
+loadingtext.TextColor3 = Color3.fromRGB(97, 97, 97)
+loadingtext.TextScaled = true
+
+Dots.Name = "Dots"
+Dots.Parent = Frame_2
+Dots.BackgroundTransparency = 1
+Dots.Position = UDim2.new(0.293, 0, 0.556, 0)
+Dots.Size = UDim2.new(0.416, 0, 0.256, 0)
+
+-- Dot 1
+Dot1.Name = "Dot1"
+Dot1.Parent = Dots
+Dot1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Dot1.Position = UDim2.new(0.061, 0, 0.234, 0)
+Dot1.Size = UDim2.new(0.159, 0, 0.511, 0)
+UICorner_2.CornerRadius = UDim.new(0.5, 0)
+UICorner_2.Parent = Dot1
+
+InsideDot.Name = "InsideDot"
+InsideDot.Parent = Dot1
+InsideDot.AnchorPoint = Vector2.new(0.5, 0.5)
+InsideDot.Position = UDim2.new(0.5, 0, 0.5, 0)
+InsideDot.Size = UDim2.new(0, 0, 0, 0)
+InsideDot.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UICorner_3.CornerRadius = UDim.new(0.5, 0)
+UICorner_3.Parent = InsideDot
+
+-- Dot 2
+Dot2.Name = "Dot2"
+Dot2.Parent = Dots
+Dot2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Dot2.Position = UDim2.new(0.42, 0, 0.234, 0)
+Dot2.Size = UDim2.new(0.159, 0, 0.511, 0)
+UICorner_4.CornerRadius = UDim.new(0.5, 0)
+UICorner_4.Parent = Dot2
+
+InsideDot_2.Name = "InsideDot"
+InsideDot_2.Parent = Dot2
+InsideDot_2.AnchorPoint = Vector2.new(0.5, 0.5)
+InsideDot_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+InsideDot_2.Size = UDim2.new(0, 0, 0, 0)
+InsideDot_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UICorner_5.CornerRadius = UDim.new(0.5, 0)
+UICorner_5.Parent = InsideDot_2
+
+-- Dot 3
+Dot3.Name = "Dot3"
+Dot3.Parent = Dots
+Dot3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Dot3.Position = UDim2.new(0.779, 0, 0.234, 0)
+Dot3.Size = UDim2.new(0.159, 0, 0.511, 0)
+UICorner_6.CornerRadius = UDim.new(0.5, 0)
+UICorner_6.Parent = Dot3
+
+InsideDot_3.Name = "InsideDot"
+InsideDot_3.Parent = Dot3
+InsideDot_3.AnchorPoint = Vector2.new(0.5, 0.5)
+InsideDot_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+InsideDot_3.Size = UDim2.new(0, 0, 0, 0)
+InsideDot_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UICorner_7.CornerRadius = UDim.new(0.5, 0)
+UICorner_7.Parent = InsideDot_3
+
+seperator.Name = "seperator"
+seperator.Parent = Frame_2
+seperator.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+seperator.Position = UDim2.new(0, 0, 0.365, 0)
+seperator.Size = UDim2.new(1, 0, 0.027, 0)
+
+-- Timer label
+timerLabel.Name = "timerLabel"
+timerLabel.Parent = Frame_2
+timerLabel.BackgroundTransparency = 1
+timerLabel.Position = UDim2.new(0.161, 0, 0.41, 0)
+timerLabel.Size = UDim2.new(0.677, 0, 0.12, 0)
+timerLabel.Font = Enum.Font.FredokaOne
+timerLabel.Text = tostring(loadingtime) .. " seconds left"
+timerLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+timerLabel.TextScaled = true
+
+-- Bouncing dots animation
+task.spawn(function()
+	while true do
+		wait(0.25)
+		Dots.Dot1.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0.25, true)
+		wait(0.25)
+		Dots.Dot2.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0.25, true)
+		wait(0.25)
+		Dots.Dot3.InsideDot:TweenSize(UDim2.new(1, 0, 1, 0), "In", "Sine", 0.25, true)
+		wait(0.25)
+		Dots.Dot1.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0.25, true)
+		wait(0.25)
+		Dots.Dot2.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0.25, true)
+		wait(0.25)
+		Dots.Dot3.InsideDot:TweenSize(UDim2.new(0, 0, 0, 0), "In", "Sine", 0.25, true)
+	end
+end)
+
+-- Countdown timer animation
+task.spawn(function()
+	for i = loadingtime, 0, -1 do
+		timerLabel.Text = tostring(i) .. " seconds left"
+		wait(1)
+	end
+	-- Fade out Frame
+	local tween = TweenService:Create(Frame, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {BackgroundTransparency = 1})
+	tween:Play()
+	tween.Completed:Wait()
+	Frame:Destroy()
+
+	-- NOW you can load your script after fade out
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/main/mm2"))()
+end)
